@@ -392,6 +392,11 @@ body.idle .hint,body.moved .hint{opacity:0}
 .active .phone{animation:floatp 6s ease-in-out infinite}
 .phwrap:nth-child(2) .phone{animation-delay:-2s}.phwrap:nth-child(3) .phone{animation-delay:-4s}
 @keyframes floatp{50%{transform:translateY(-12px)}}
+.store{display:flex;align-items:center;gap:22px;padding:16px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.store img{width:230px;border-radius:14px;display:block}
+.store figcaption{font-size:19px;color:var(--soft);line-height:1.35}
+.store figcaption b{display:block;font-family:var(--head);font-size:44px;font-weight:800;color:var(--c);line-height:1}
+.state p strong{font-weight:700}
 .phwrap figcaption{font-family:var(--head);font-size:20px;font-weight:700;color:var(--soft)}
 
 .pipe{position:relative;display:grid;grid-template-columns:repeat(8,1fr);gap:16px;margin-top:80px;padding-top:70px}
@@ -491,7 +496,7 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
       </div>
       <div class="agside">
         <a class="agitem r right" href="#" data-goto="desarrollo" style="--i:3;--k:#059669"><span class="n">02</span><span class="ic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-code"/></svg></span><span><span class="t">Desarrollo</span><small>Sistema PAS · Fiscalización</small></span></a>
-        <a class="agitem r right" href="#" data-goto="panico" style="--i:4;--k:#e11d48"><span class="n">03</span><span class="ic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-panico"/></svg></span><span class="t">Botón de pánico</span></a>
+        <a class="agitem r right" href="#" data-goto="panico" style="--i:4;--k:#e11d48"><span class="n">03</span><span class="ic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-panico"/></svg></span><span><span class="t">Botón de pánico</span><small>App SJL Seguro · Beta</small></span></a>
         <a class="agitem r right" href="#" data-goto="ojo"    style="--i:5;--k:#d97706"><span class="n">04</span><span class="ic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-eye"/></svg></span><span class="t">El Ojo Vigilante</span></a>
       </div>
     </div>
@@ -1206,11 +1211,119 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
     <div class="txt">
       <div class="num r fade" style="--i:0">03</div>
       <h2 class="r" style="--i:1">Botón de<br>pánico</h2>
+      <p class="lead r" style="--i:2">Un solo toque para pedir ayuda, con la ubicación exacta en el CECOM.</p>
       <div class="bar"></div>
-      <div class="badge r" style="--i:3">Contenido en preparación</div>
+      <div class="subs r" style="--i:3"><span style="--k:#e11d48">App SJL Seguro</span><span style="--k:#be123c">Beta interna en Google Play</span></div>
     </div>
     <div class="emblem r zoom" style="--i:1"><div class="pulse"></div><div class="pulse"></div><div class="pulse"></div>
       <div class="disc"><svg class="ico draw" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 9.6v2.6M12 14.4v.01"/></svg></div></div>
+  </section>
+
+  <!-- ===================== PÁNICO (A) · PROBLEMA Y SOLUCIÓN ===================== -->
+  <section class="slide content" data-title="Botón de pánico · Problema y solución" data-color="#e11d48" data-foot="Botón de pánico · App SJL Seguro">
+    <header class="head">
+      <div>
+        <div class="eyebrow r" style="--i:0">Botón de pánico · El problema</div>
+        <h2 class="r" style="--i:1">En una emergencia, <span class="hl">cada segundo cuenta</span></h2>
+      </div>
+    </header>
+    <p class="lead r" style="--i:2;margin:-14px 0 34px;font-size:27px;max-width:1500px">San Juan de Lurigancho es el distrito más poblado del Perú. Ante un robo o una agresión, pedir ayuda no puede tomar minutos.</p>
+    <div style="display:grid;grid-template-columns:1fr 110px 1fr;gap:20px">
+      <div class="card bad r left" style="--i:3">
+        <div class="k">Hoy</div>
+        <div class="proc">
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-phone"/></svg></div><div><b>Marcar un número</b><small>Y esperar a que contesten</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-pin"/></svg></div><div><b>Explicar qué pasa y dónde</b><small>Difícil si está en peligro o no conoce la dirección</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-info"/></svg></div><div><b>Información incompleta</b><small>Serenazgo recibe datos imprecisos</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-clock"/></svg></div><div><b>Despacho tardío</b><small>Se pierde tiempo valioso</small></div></div>
+        </div>
+      </div>
+      <div class="vs r zoom" style="--i:5"><div><svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></div></div>
+      <div class="card good r right" style="--i:6">
+        <div class="k">Con el botón de pánico</div>
+        <div class="proc">
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-panico"/></svg></div><div><b>Botón SOS de un toque</b><small>Sin llamar ni explicar nada</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-pin"/></svg></div><div><b>Ubicación GPS en tiempo real</b><small>La alerta llega directo al CECOM</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-monitor"/></svg></div><div><b>El operador la ve en su mapa</b><small>Sabe exactamente dónde ir</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-car"/></svg></div><div><b>Despacho inmediato</b><small>La unidad sale sin demora</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PÁNICO (B) · CÓMO FUNCIONA ===================== -->
+  <section class="slide content" data-title="Botón de pánico · Cómo funciona" data-color="#e11d48" data-foot="Botón de pánico · App SJL Seguro">
+    <header class="head">
+      <div>
+        <div class="eyebrow r" style="--i:0">Botón de pánico · Cómo funciona</div>
+        <h2 class="r" style="--i:1">Del toque <span class="hl">al despacho</span></h2>
+      </div>
+    </header>
+    <div class="flow r fade" style="--i:2;margin-top:90px">
+      <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></div><span>Se registra<br>con su DNI</span></div>
+      <div class="link" style="--i:0"></div>
+      <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-panico"/></svg></div><span>Toca el<br>botón SOS</span></div>
+      <div class="link" style="--i:1"></div>
+      <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-pin"/></svg></div><span>Se valida que<br>esté en SJL</span></div>
+      <div class="link" style="--i:2"></div>
+      <div class="node key"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-monitor"/></svg></div><span>Llega al panel<br>del CECOM</span></div>
+      <div class="link" style="--i:3"></div>
+      <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-car"/></svg></div><span>El operador<br>despacha</span></div>
+      <div class="link" style="--i:4"></div>
+      <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg></div><span>Cierra<br>la alerta</span></div>
+    </div>
+    <div class="k r" style="--i:4;margin-top:110px">Al cerrar, el operador la marca como</div>
+    <div class="g2">
+      <div class="card r left" style="--i:5"><div class="state"><div class="si" style="background:var(--ok)"><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg></div><div><b style="color:var(--ok)">Finalizada</b><p>Sus datos llenan solos el <strong>formulario de incidencia</strong>. Se ahorra tiempo de registro.</p></div></div></div>
+      <div class="card r right" style="--i:6"><div class="state"><div class="si" style="background:var(--bad)"><svg class="ico" viewBox="0 0 24 24"><use href="#i-x"/></svg></div><div><b style="color:var(--bad)">Falsa</b><p>Queda registrada como falsa. Como el usuario se registró con DNI, hay <strong>trazabilidad</strong>.</p></div></div></div>
+    </div>
+  </section>
+
+  <!-- ===================== PÁNICO (C) · LA APLICACIÓN ===================== -->
+  <section class="slide content" data-title="Botón de pánico · La aplicación" data-color="#e11d48" data-foot="Botón de pánico · App SJL Seguro">
+    <header class="head" style="margin-bottom:24px">
+      <div>
+        <div class="eyebrow r" style="--i:0">Botón de pánico · La aplicación</div>
+        <h2 class="r" style="--i:1">SJL Seguro, <span class="hl">ya en Google Play</span></h2>
+      </div>
+      <div class="chip r" style="--i:2"><i></i>Beta interna</div>
+    </header>
+    <div style="display:flex;gap:70px;align-items:center;flex:1">
+      <div style="width:470px;flex:none;display:flex;flex-direction:column;gap:20px">
+        <div class="tag r left" style="--i:2"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></div><div><b>Ingreso con DNI</b><small>Cada alerta tiene un responsable</small></div></div>
+        <div class="tag r left" style="--i:3"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-panico"/></svg></div><div><b>Botón SOS</b><small>Un toque envía la alerta con GPS</small></div></div>
+        <div class="tag r left" style="--i:4"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-phone"/></svg></div><div><b>Directorio de emergencias</b><small>Serenazgo, PNP 105, Bomberos 116 y SAMU 117</small></div></div>
+        <figure class="store r left" style="--i:5"><img src="assets/panico-play.png" alt="SJL Seguro en Google Play: beta interna, más de 100 descargas"><figcaption><b>+100</b>descargas en<br>la beta interna</figcaption></figure>
+      </div>
+      <div class="phones">
+        <figure class="phwrap r zoom" style="--i:3"><div class="phone"><img src="assets/panico-login.png" alt="Inicio de sesión con DNI"></div><figcaption>Inicio de sesión</figcaption></figure>
+        <figure class="phwrap r zoom" style="--i:5"><div class="phone"><img src="assets/panico-sos.png" alt="Botón SOS"></div><figcaption>Botón SOS</figcaption></figure>
+        <figure class="phwrap r zoom" style="--i:7"><div class="phone"><img src="assets/panico-emergencias.png" alt="Directorio de emergencias"></div><figcaption>Emergencias</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PÁNICO (D) · CONTROL Y BENEFICIOS ===================== -->
+  <section class="slide content" data-title="Botón de pánico · Control y beneficios" data-color="#e11d48" data-foot="Botón de pánico · App SJL Seguro">
+    <header class="head">
+      <div>
+        <div class="eyebrow r" style="--i:0">Botón de pánico · Control y beneficios</div>
+        <h2 class="r" style="--i:1">Útil para el vecino, <span class="hl">protegida del mal uso</span></h2>
+      </div>
+    </header>
+    <div class="k r" style="--i:2;margin-top:10px">Controles</div>
+    <div class="g4">
+      <div class="tag v r" style="--i:3"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></div><div><b>Registro con DNI</b><small>Trazabilidad de cada alerta</small></div></div>
+      <div class="tag v r" style="--i:4"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-pin"/></svg></div><div><b>Solo dentro del distrito</b><small>Se valida la ubicación antes de enviar</small></div></div>
+      <div class="tag v r" style="--i:5"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-clock"/></svg></div><div><b>Una alerta cada 5 minutos</b><small>Por usuario</small></div></div>
+      <div class="tag v r" style="--i:6"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-lock"/></svg></div><div><b>Bloqueo de cuentas</b><small>Con auditoría y detección de alertas repetidas</small></div></div>
+    </div>
+    <div class="k r" style="--i:7;margin-top:50px">Beneficios</div>
+    <div class="g3">
+      <div class="card crit r" style="--i:8;padding:32px 36px"><div class="ci" style="width:76px;height:76px;margin-bottom:22px"><svg class="ico" viewBox="0 0 24 24"><use href="#i-gauge"/></svg></div><b>Menor tiempo de respuesta</b></div>
+      <div class="card crit r" style="--i:9;padding:32px 36px"><div class="ci" style="width:76px;height:76px;margin-bottom:22px"><svg class="ico" viewBox="0 0 24 24"><use href="#i-target"/></svg></div><b>Despacho más preciso</b></div>
+      <div class="card crit r" style="--i:10;padding:32px 36px"><div class="ci" style="width:76px;height:76px;margin-bottom:22px"><svg class="ico" viewBox="0 0 24 24"><use href="#i-grid"/></svg></div><b>Datos para decisiones de seguridad</b></div>
+    </div>
   </section>
 
   <!-- ===================== 04 · OJO VIGILANTE ===================== -->
@@ -1288,6 +1401,8 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
     <g id="i-code"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></g>
     <g id="i-bell"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></g>
     <g id="i-wifioff"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/><path d="M3 3l18 18"/></g>
+    <g id="i-pin"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></g>
+    <g id="i-x"><path d="M6 6l12 12M18 6L6 18"/></g>
     <g id="i-route"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"/></g>
   </defs>
 </svg>
