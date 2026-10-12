@@ -442,7 +442,7 @@ body.idle .hint,body.moved .hint{opacity:0}
 .carrow svg{width:26px;height:26px}
 .active .carrow svg{animation:nudge 1.6s ease-in-out infinite 1.2s}
 .photos{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.photos figure{position:relative;margin:0;border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow);background:#e2e8f0}
+.photos figure{position:relative;margin:0;border-radius:20px;overflow:hidden;aspect-ratio:3/2;box-shadow:var(--shadow);background:#e2e8f0}
 .photos img{width:100%;height:100%;object-fit:cover;display:block}
 .photos figcaption{position:absolute;left:12px;bottom:12px;padding:7px 14px;border-radius:100px;background:rgba(15,27,51,.78);color:#fff;font-family:var(--head);font-size:16px;font-weight:700}
 .people{display:flex;justify-content:space-between;gap:16px}
@@ -1716,28 +1716,28 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
     <div class="txt">
       <div class="num r fade" style="--i:0">07</div>
       <h2 class="r" style="--i:1">El Ojo<br>Vigilante</h2>
-      <p class="lead r" style="--i:2">Vecinos, central y serenos conectados en una sola aplicación para atender cada alerta.</p>
+      <p class="lead r" style="--i:2">Vecinos, central y serenos conectados en una sola aplicación. Capacitación realizada <b style="color:var(--c)">junto al encargado de Compromiso 5</b>.</p>
       <div class="bar"></div>
-      <div class="subs r" style="--i:3"><span style="--k:#d97706">Capacitación a vecinos</span><span style="--k:#b45309">Junto con Compromiso 5</span></div>
+      <div class="subs r" style="--i:3"><span style="--k:#d97706">Capacitación a vecinos</span><span style="--k:#b45309">Trabajo conjunto con Compromiso 5</span></div>
     </div>
     <div class="emblem r zoom" style="--i:1"><div class="pulse"></div><div class="pulse"></div><div class="pulse"></div>
       <div class="disc"><svg class="ico draw" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
   </section>
 
   <!-- ===================== OJO (A) · CAPACITACIONES ===================== -->
-  <section class="slide content" data-title="Ojo Vigilante · Capacitaciones" data-color="#d97706" data-foot="El Ojo Vigilante · Capacitación a vecinos">
-    <header class="head" style="margin-bottom:34px">
+  <section class="slide content" data-title="Ojo Vigilante · Capacitaciones" data-color="#d97706" data-foot="El Ojo Vigilante · Capacitación a vecinos junto a Compromiso 5">
+    <header class="head" style="margin-bottom:30px">
       <div>
         <div class="eyebrow r" style="--i:0">Ojo Vigilante · Capacitaciones</div>
         <h2 class="r" style="--i:1">Capacitamos a cada vecino <span class="hl">para que ingrese a la app</span></h2>
       </div>
+      <div class="chip r" style="--i:2"><i></i>Junto a Compromiso 5</div>
     </header>
     <div style="display:flex;gap:50px;align-items:flex-start">
       <div style="width:480px;flex:none;display:flex;flex-direction:column;gap:20px">
         <div class="tag r left" style="--i:2"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-building"/></svg></div><div><b>Reuniones en el CECOM</b><small>Instalación, cambio de contraseña e ingreso a la app</small></div></div>
         <div class="tag r left" style="--i:3"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-home"/></svg></div><div><b>En el domicilio del vecino</b><small>Visitas a cada vecino representante</small></div></div>
         <div class="tag r left" style="--i:4"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-car"/></svg></div><div><b>Serenos y choferes</b><small>También capacitados para atender las alertas</small></div></div>
-        <div class="tag r left" style="--i:5"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-link"/></svg></div><div><b>Junto con Compromiso 5</b><small>El área se sumó a las capacitaciones de vecinos y choferes</small></div></div>
       </div>
       <div class="photos">
         <figure class="r zoom" style="--i:3"><img src="assets/ojo-cecom-1.jpg" alt="Capacitación en el CECOM con la guía de Ojo Vigilante"><figcaption>CECOM</figcaption></figure>
@@ -1747,6 +1747,10 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
         <figure class="r zoom" style="--i:7"><img src="assets/ojo-domicilio-2.jpg" alt="Visita a la junta vecinal"><figcaption>Junta vecinal</figcaption></figure>
         <figure class="r zoom" style="--i:8"><img src="assets/ojo-serenos-1.jpg" alt="Capacitación a serenos en campo"><figcaption>Serenos y choferes</figcaption></figure>
       </div>
+    </div>
+    <div class="result r" style="--i:9;margin-top:28px">
+      <div class="ri"><svg class="ico" viewBox="0 0 24 24"><use href="#i-users"/></svg></div>
+      <div><div class="k">Trabajo conjunto con Compromiso 5</div><p>Las capacitaciones se realizaron <b>junto al encargado de Compromiso 5</b>, que se sumó a las sesiones con <b>vecinos</b> y con <b>choferes</b>.</p></div>
     </div>
   </section>
 
@@ -1879,6 +1883,7 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
     <g id="i-bank"><path d="M3 21h18M4 10h16M12 3l9 5H3z"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8"/></g>
     <g id="i-call"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></g>
     <g id="i-map"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></g>
+    <g id="i-users"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><circle cx="17" cy="9" r="2.8"/><path d="M16 13.6a5 5 0 0 1 6 4.9"/></g>
     <g id="i-x"><path d="M6 6l12 12M18 6L6 18"/></g>
     <g id="i-route"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"/></g>
   </defs>
