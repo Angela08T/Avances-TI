@@ -406,6 +406,53 @@ body.idle .hint,body.moved .hint{opacity:0}
   box-shadow:0 12px 26px -8px var(--c);animation:tok 8s linear infinite}
 .token svg{width:28px;height:28px}
 @keyframes tok{0%{left:0}87.5%,100%{left:100%}}
+.shot{display:block;border-radius:18px;box-shadow:0 30px 60px -24px rgba(15,30,60,.45);flex:none}
+.shotfig{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+.shotfig figcaption{font-family:var(--head);font-size:18px;font-weight:700;color:var(--soft)}
+/* Botón de pánico: animaciones */
+.pinwrap{position:relative;display:block}
+.ping{position:absolute;left:var(--x);top:var(--y);width:var(--s,60px);aspect-ratio:1;translate:-50% -50%;pointer-events:none}
+.ping::before,.ping::after{content:"";position:absolute;inset:0;border-radius:50%;border:4px solid var(--pc,var(--c));opacity:0}
+.active .ping::before{animation:ring 2.4s ease-out infinite 1s}
+.active .ping::after{animation:ring 2.4s ease-out infinite 2.2s}
+@keyframes ring{0%{transform:scale(.35);opacity:.95}100%{transform:scale(1.5);opacity:0}}
+.active .seqtags .tag{animation:taghl 10s ease-in-out infinite}
+.seqtags .tag:nth-child(1){animation-delay:1.6s!important}.seqtags .tag:nth-child(2){animation-delay:3.6s!important}
+.seqtags .tag:nth-child(3){animation-delay:5.6s!important}.seqtags .tag:nth-child(4){animation-delay:7.6s!important}
+.seqtags .tag:nth-child(5){animation-delay:9.6s!important}
+@keyframes taghl{0%,20%{border-color:var(--line);translate:0}4%,16%{border-color:var(--c);translate:-14px 0;box-shadow:0 18px 40px -14px color-mix(in srgb,var(--c) 55%,transparent)}}
+.case3{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.case3 .col{display:flex;flex-direction:column;gap:20px}
+.case3 .card{padding:26px 30px;min-height:228px}
+.active .case3 .card{animation:cardhl 4.2s ease-in-out infinite;animation-delay:calc(var(--d) + 1.5s)}
+@keyframes cardhl{0%,30%{border-color:var(--line)}6%,24%{border-color:var(--c)}}
+.case3 .k{margin-bottom:10px}
+.case3 .k i{font-style:normal;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--c);color:#fff;font-size:17px;letter-spacing:0}
+.active .case3 .k i{animation:badge 4.2s ease-out infinite;animation-delay:calc(var(--d) + 1.5s)}
+@keyframes badge{0%{transform:scale(1);box-shadow:0 0 0 0 color-mix(in srgb,var(--c) 55%,transparent)}8%{transform:scale(1.3)}20%{transform:scale(1);box-shadow:0 0 0 14px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.case3 p{font-size:21px;line-height:1.45;color:var(--soft)}
+.case3 p b{color:var(--ok)}
+.case3 figure{position:relative;margin:0;height:380px;border-radius:20px;overflow:hidden;background:#0f1b33;box-shadow:0 30px 60px -24px rgba(15,30,60,.45)}
+.case3 figure img,.case3 .pinwrap{width:100%;height:100%;object-fit:cover}
+.case3 figcaption{position:absolute;left:14px;bottom:14px;padding:8px 16px;border-radius:100px;background:rgba(15,27,51,.8);color:#fff;font-family:var(--head);font-size:17px;font-weight:700}
+.active .case3 .kb img{animation:kb 16s ease-in-out infinite alternate 1s}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
+.carrow{position:absolute;top:96px;width:52px;height:52px;margin-left:-26px;border-radius:50%;display:grid;place-items:center;color:#fff;background:var(--c);box-shadow:0 12px 26px -8px var(--c);z-index:2}
+.carrow svg{width:26px;height:26px}
+.active .carrow svg{animation:nudge 1.6s ease-in-out infinite 1.2s}
+.photos{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.photos figure{position:relative;margin:0;border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow);background:#e2e8f0}
+.photos img{width:100%;height:100%;object-fit:cover;display:block}
+.photos figcaption{position:absolute;left:12px;bottom:12px;padding:7px 14px;border-radius:100px;background:rgba(15,27,51,.78);color:#fff;font-family:var(--head);font-size:16px;font-weight:700}
+.people{display:flex;justify-content:space-between;gap:16px}
+.people i{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;color:var(--muted);border:3px dashed rgba(30,60,120,.25)}
+.people i.on{color:#fff;border:none;background:var(--ok);box-shadow:0 16px 32px -12px var(--ok)}
+.people svg{width:70px;height:70px}
+.active .people i{animation:camon .5s var(--ease) both;animation-delay:calc(var(--i) * 110ms + 500ms)}
+.flow.seven .node{width:170px}
+.node small{font-size:18px;color:var(--muted);line-height:1.35;margin-top:-6px}
+.pipe.six{grid-template-columns:repeat(6,1fr);gap:22px}
+.pipe.six .track{left:8.33%;right:8.33%}
 .pst{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:40px 12px 36px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-top:5px solid var(--k)}
 .pst i{font-style:normal;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:24px;color:#fff;background:var(--k);animation:hit 8s linear infinite;animation-delay:calc(var(--n) * 1s)}
 @keyframes hit{0%{transform:scale(1.25);box-shadow:0 0 0 12px color-mix(in srgb,var(--k) 25%,transparent)}10%,100%{transform:none;box-shadow:0 0 0 0 transparent}}
@@ -443,8 +490,8 @@ body.idle .hint,body.moved .hint{opacity:0}
 .browser .bar{height:46px;display:flex;align-items:center;gap:8px;padding:0 18px;background:#eef2f7}
 .browser .bar i{width:13px;height:13px;border-radius:50%}
 .browser .url{margin-left:14px;flex:1;height:28px;border-radius:14px;background:#fff;font-size:15px;color:var(--muted);display:flex;align-items:center;padding:0 16px}
-.screens{position:relative;aspect-ratio:409/226;background:#f1f5f9}
-.screens img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .7s,transform 1.4s var(--ease)}
+.screens{position:relative;aspect-ratio:1342/736;background:#fff}
+.screens img{position:absolute;inset:0;width:100%;height:100%;object-fit:scale-down;opacity:0;transform:scale(1.04);transition:opacity .7s,transform 1.4s var(--ease)}
 .screens img.on{opacity:1;transform:none}
 
 html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
@@ -497,7 +544,9 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
       <div class="agside">
         <a class="agitem r right" href="#" data-goto="desarrollo" style="--i:3;--k:#059669"><span class="n">02</span><span class="ic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-code"/></svg></span><span><span class="t">Desarrollo</span><small>Sistema PAS · Fiscalización</small></span></a>
         <a class="agitem r right" href="#" data-goto="panico" style="--i:4;--k:#e11d48"><span class="n">03</span><span class="ic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-panico"/></svg></span><span><span class="t">Botón de pánico</span><small>App SJL Seguro · Beta</small></span></a>
-        <a class="agitem r right" href="#" data-goto="ojo"    style="--i:5;--k:#d97706"><span class="n">04</span><span class="ic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-eye"/></svg></span><span class="t">El Ojo Vigilante</span></a>
+        <a class="agitem r right" href="#" data-goto="pide"   style="--i:5;--k:#4f46e5"><span class="n">04</span><span class="ic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-search"/></svg></span><span><span class="t">Consultas PIDE</span><small>Subgerencia de Transporte</small></span></a>
+        <a class="agitem r right" href="#" data-goto="pagos"  style="--i:6;--k:#0891b2"><span class="n">05</span><span class="ic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-bank"/></svg></span><span><span class="t">CECOM Pagos</span><small>Área de pagos</small></span></a>
+        <a class="agitem r right" href="#" data-goto="ojo"    style="--i:7;--k:#d97706"><span class="n">06</span><span class="ic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-eye"/></svg></span><span><span class="t">El Ojo Vigilante</span><small>Capacitación a vecinos</small></span></a>
       </div>
     </div>
   </section>
@@ -611,40 +660,10 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
         <div class="node r" style="--i:7"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-link"/></svg></div><span>Amper<br>Systems</span></div>
       </div>
     </div>
-    <div class="g4">
+    <div class="g3">
       <div class="tag v r" style="--i:6"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-lock"/></svg></div><div><b>Canal privado y seguro</b><small>Enlace dedicado o VPN</small></div></div>
       <div class="tag v r" style="--i:7"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-shield"/></svg></div><div><b>Solo cámaras autorizadas</b><small>Con reglas y registro de accesos</small></div></div>
-      <div class="tag v r" style="--i:8"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-gauge"/></svg></div><div><b>Sin afectar al CECOM</b><small>Capacidad de red medida</small></div></div>
-      <div class="tag v r" style="--i:9"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-stairs"/></svg></div><div><b>Crecer por etapas</b><small>Con pruebas en cada grupo</small></div></div>
-    </div>
-  </section>
-
-  <!-- ===================== AMPER (C) ===================== -->
-  <section class="slide content" data-title="Amper · Coordinación" data-color="#7c3aed" data-foot="Proyecto 01 · Interconexión con Amper Systems">
-    <header class="head">
-      <div>
-        <div class="eyebrow r" style="--i:0">Proyecto 01 · Amper Systems</div>
-        <h2 class="r" style="--i:1">Un trabajo <span class="hl">coordinado</span></h2>
-      </div>
-      <div class="chip r" style="--i:2"><i></i>Avance parcial</div>
-    </header>
-    <div class="hubwrap r fade" style="--i:2">
-      <svg class="hl-lines" viewBox="0 0 1680 470">
-        <path id="hp1" d="M500 120 C 620 120, 700 200, 745 220"/>
-        <path id="hp2" d="M1180 120 C 1060 120, 980 200, 935 220"/>
-        <path id="hp3" d="M840 330 V 360"/>
-        <circle r="7"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#hp1"/></animateMotion></circle>
-        <circle r="7"><animateMotion dur="1.8s" begin="-.9s" repeatCount="indefinite"><mpath href="#hp2"/></animateMotion></circle>
-      </svg>
-      <div class="hcore">Interconexión<br>controlada</div>
-      <div class="sat r left" style="--i:3;left:60px;top:40px"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-building"/></svg></div><div><b>OGDI</b><small>Valida seguridad y autoriza</small></div></div>
-      <div class="sat r right" style="--i:4;left:1180px;top:40px"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-link"/></svg></div><div><b>Amper y proveedor</b><small>Definen recepción y pruebas</small></div></div>
-      <div class="sat r" style="--i:5;left:620px;top:360px"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-monitor"/></svg></div><div><b>CECOM / Redes</b><small>Inventario, pruebas y seguimiento</small></div></div>
-    </div>
-    <div class="result r" style="--i:7">
-      <div class="ri"><svg class="ico" viewBox="0 0 24 24"><use href="#i-target"/></svg></div>
-      <div><div class="k">Resultado esperado</div>
-      <p>Video compartido de forma <b>controlada, escalable y trazable</b>, útil también para analítica con IA cuando se cuente con esa tecnología.</p></div>
+      <div class="tag v r" style="--i:8"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-stairs"/></svg></div><div><b>Crecer por etapas</b><small>Con pruebas en cada grupo</small></div></div>
     </div>
   </section>
 
@@ -776,11 +795,11 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
         <h2 class="r" style="--i:1">La propuesta: <span class="hl">cada módulo con su propia conexión</span></h2>
       </div>
     </header>
-    <svg class="topo" viewBox="0 0 1680 440" style="height:500px;margin-top:10px">
+    <svg class="topo" viewBox="0 0 1680 440" style="width:100%;height:auto;margin-top:10px">
       <g class="r zoom" style="--i:2" filter="drop-shadow(0 12px 20px rgba(37,99,235,.2))">
-        <circle cx="782" cy="72" r="40" fill="#2563eb"/><circle cx="842" cy="50" r="52" fill="#2563eb"/><circle cx="904" cy="72" r="40" fill="#2563eb"/><rect x="782" y="62" width="122" height="52" fill="#2563eb"/>
-        <text x="843" y="74" text-anchor="middle" style="font-family:Sora;font-weight:700;font-size:20px;fill:#fff">Red operativa</text>
-        <text x="843" y="99" text-anchor="middle" style="font-size:16px;fill:#dbeafe;font-weight:600">CECOM / Internet</text>
+        <circle cx="779" cy="72" r="40" fill="#2563eb"/><circle cx="839" cy="50" r="52" fill="#2563eb"/><circle cx="901" cy="72" r="40" fill="#2563eb"/><rect x="779" y="62" width="122" height="52" fill="#2563eb"/>
+        <text x="840" y="74" text-anchor="middle" style="font-family:Sora;font-weight:700;font-size:20px;fill:#fff">Red operativa</text>
+        <text x="840" y="99" text-anchor="middle" style="font-size:16px;fill:#dbeafe;font-weight:600">CECOM / Internet</text>
       </g>
       <g id="mods"></g>
     </svg>
@@ -1259,7 +1278,7 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
         <h2 class="r" style="--i:1">Del toque <span class="hl">al despacho</span></h2>
       </div>
     </header>
-    <div class="flow r fade" style="--i:2;margin-top:90px">
+    <div class="flow seven r fade" style="--i:2;margin-top:90px">
       <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></div><span>Se registra<br>con su DNI</span></div>
       <div class="link" style="--i:0"></div>
       <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-panico"/></svg></div><span>Toca el<br>botón SOS</span></div>
@@ -1268,6 +1287,8 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
       <div class="link" style="--i:2"></div>
       <div class="node key"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-monitor"/></svg></div><span>Llega al panel<br>del CECOM</span></div>
       <div class="link" style="--i:3"></div>
+      <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-call"/></svg></div><span>Llamada de<br>verificación</span></div>
+      <div class="link" style="--i:5"></div>
       <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-car"/></svg></div><span>El operador<br>despacha</span></div>
       <div class="link" style="--i:4"></div>
       <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg></div><span>Cierra<br>la alerta</span></div>
@@ -1297,13 +1318,60 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
       </div>
       <div class="phones">
         <figure class="phwrap r zoom" style="--i:3"><div class="phone"><img src="assets/panico-login.png" alt="Inicio de sesión con DNI"></div><figcaption>Inicio de sesión</figcaption></figure>
-        <figure class="phwrap r zoom" style="--i:5"><div class="phone"><img src="assets/panico-sos.png" alt="Botón SOS"></div><figcaption>Botón SOS</figcaption></figure>
+        <figure class="phwrap r zoom" style="--i:5"><div class="phone"><span class="pinwrap" style="border-radius:32px;overflow:hidden"><img src="assets/panico-sos.png" alt="Botón SOS"><i class="ping" style="--x:50%;--y:49.5%;--s:78%;--pc:#e11d48"></i></span></div><figcaption>Botón SOS</figcaption></figure>
         <figure class="phwrap r zoom" style="--i:7"><div class="phone"><img src="assets/panico-emergencias.png" alt="Directorio de emergencias"></div><figcaption>Emergencias</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PÁNICO (D) · CONTROL Y BENEFICIOS ===================== -->
+  <!-- ===================== PÁNICO (D) · PANEL DEL OPERADOR ===================== -->
+  <section class="slide content" data-title="Botón de pánico · Panel del operador" data-color="#e11d48" data-foot="Botón de pánico · App SJL Seguro">
+    <header class="head" style="margin-bottom:26px">
+      <div>
+        <div class="eyebrow r" style="--i:0">Botón de pánico · CECOM</div>
+        <h2 class="r" style="--i:1">Así recibe la alerta <span class="hl">el operador</span></h2>
+      </div>
+    </header>
+    <div style="display:flex;gap:70px;align-items:center">
+      <span class="pinwrap shot r left" style="--i:2;overflow:hidden"><img style="height:700px;display:block" src="assets/panico-panel.png" alt="Panel de la alerta en el CECOM: datos del vecino, mapa con cámaras cercanas y botones de gestión"><i class="ping" style="--x:48.8%;--y:59.2%;--s:80px;--pc:#ef4444"></i></span>
+      <div class="seqtags" style="flex:1;display:flex;flex-direction:column;gap:22px">
+        <div class="tag r right" style="--i:3"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></div><div><b>Quién pide ayuda</b><small>Nombre, DNI, celular y jurisdicción del vecino</small></div></div>
+        <div class="tag r right" style="--i:4"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-pin"/></svg></div><div><b>Dónde está</b><small>Ubicación exacta en el mapa, con acceso a Google Maps</small></div></div>
+        <div class="tag r right" style="--i:5"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-cam"/></svg></div><div><b>Qué hay cerca</b><small>Cámaras municipales y vecinales, radios y bodycams alrededor del punto</small></div></div>
+        <div class="tag r right" style="--i:6"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg></div><div><b>Qué hace el operador</b><small>Atendiendo, finalizar, falsa alarma o bloquear usuario</small></div></div>
+        <div class="tag r right" style="--i:7"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-doc"/></svg></div><div><b>Crear incidencia</b><small>Con los datos de la alerta ya cargados</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PÁNICO (E) · CASO REAL ===================== -->
+  <section class="slide content" data-title="Botón de pánico · Caso real" data-color="#e11d48" data-foot="Botón de pánico · Evidencia de atención · Datos personales ocultos">
+    <header class="head" style="margin-bottom:30px">
+      <div>
+        <div class="eyebrow r" style="--i:0">Botón de pánico · Evidencia</div>
+        <h2 class="r" style="--i:1">Caso real <span class="hl">en Canto Rey</span></h2>
+      </div>
+      <div class="chip r" style="--i:2"><i></i>Alerta #107 · 11/10/2026</div>
+    </header>
+    <div class="case3">
+      <div class="col">
+        <div class="card r" style="--i:2;--d:0s"><div class="k"><i>1</i>Llega la alerta</div><p>Un vecino activa el botón SOS. La alerta aparece en el mapa del CECOM a las 18:09.</p></div>
+        <figure class="r zoom" style="--i:5"><span class="pinwrap"><img src="assets/panico-mapa.png" alt="Alerta 107 finalizada en el mapa del CECOM"><i class="ping" style="--x:50%;--y:66%;--s:90px;--pc:#16a34a"></i></span><figcaption>Mapa del CECOM</figcaption></figure>
+      </div>
+      <div class="col">
+        <div class="card r" style="--i:3;--d:1.4s"><div class="k"><i>2</i>Llamada de verificación</div><p>El personal de la Torre llama al vecino y confirma: una mujer fue agredida por su pareja, y el coordinador de la junta vecinal también, al defenderla.</p></div>
+        <figure class="r zoom" style="--i:6"><img src="assets/panico-llamada.png" style="object-position:50% 55%" alt="Historial de llamadas con dos llamadas al número del vecino"><figcaption>Llamadas al número de la alerta</figcaption></figure>
+      </div>
+      <div class="col">
+        <div class="card r" style="--i:4;--d:2.8s"><div class="k"><i>3</i>Llega el sereno y atiende</div><p>Se envía personal de Serenazgo al punto, se atiende la novedad y la alerta se cierra como <b>Finalizada</b>.</p></div>
+        <figure class="kb r zoom" style="--i:7"><img src="assets/panico-atencion.jpg" style="object-position:50% 100%;transform-origin:50% 100%" alt="Serenazgo y PNP atendiendo en Coop. La Fragata, 11/10/2026 6:34 p.m."><figcaption style="top:14px;bottom:auto">Serenazgo en el punto · 6:34 p.m.</figcaption></figure>
+      </div>
+      <div class="carrow r zoom" style="--i:5;left:calc(33.33% - 6.67px)"><svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></div>
+      <div class="carrow r zoom" style="--i:6;left:calc(66.66% + 6.67px)"><svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></div>
+    </div>
+  </section>
+
+  <!-- ===================== PÁNICO (F) · CONTROL Y BENEFICIOS ===================== -->
   <section class="slide content" data-title="Botón de pánico · Control y beneficios" data-color="#e11d48" data-foot="Botón de pánico · App SJL Seguro">
     <header class="head">
       <div>
@@ -1326,16 +1394,323 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
     </div>
   </section>
 
-  <!-- ===================== 04 · OJO VIGILANTE ===================== -->
-  <section class="slide divider" id="ojo" data-title="04 · El Ojo Vigilante" data-color="#d97706">
+  <!-- ===================== 04 · CONSULTAS PIDE ===================== -->
+  <section class="slide divider" id="pide" data-title="04 · Consultas PIDE" data-color="#4f46e5">
     <div class="txt">
       <div class="num r fade" style="--i:0">04</div>
-      <h2 class="r" style="--i:1">El Ojo<br>Vigilante</h2>
+      <h2 class="r" style="--i:1">Consultas<br>PIDE</h2>
+      <p class="lead r" style="--i:2">Datos oficiales de SUNARP y RENIEC para emitir y notificar multas a tiempo.</p>
       <div class="bar"></div>
-      <div class="badge r" style="--i:3">Contenido en preparación</div>
+      <div class="subs r" style="--i:3"><span style="--k:#4f46e5">Subgerencia de Transporte</span><span style="--k:#4338ca">SUNARP · RENIEC</span></div>
+    </div>
+    <div class="emblem r zoom" style="--i:1"><div class="pulse"></div><div class="pulse"></div><div class="pulse"></div>
+      <div class="disc"><svg class="ico draw" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg></div></div>
+  </section>
+
+  <!-- ===================== PIDE (A) · PROBLEMA Y SOLUCIÓN ===================== -->
+  <section class="slide content" data-title="Consultas PIDE · Problema y solución" data-color="#4f46e5" data-foot="Consultas PIDE · Subgerencia de Transporte">
+    <header class="head">
+      <div>
+        <div class="eyebrow r" style="--i:0">Consultas PIDE · Transporte</div>
+        <h2 class="r" style="--i:1">De buscar placa por placa <span class="hl">a cientos en segundos</span></h2>
+      </div>
+    </header>
+    <p class="lead r" style="--i:2;margin:-14px 0 34px;font-size:27px;max-width:1500px">PIDE: Plataforma de Interoperabilidad del Estado. Conecta la fiscalización con las bases oficiales de SUNARP y RENIEC.</p>
+    <div style="display:grid;grid-template-columns:1fr 110px 1fr;gap:20px">
+      <div class="card bad r left" style="--i:3">
+        <div class="k">Antes</div>
+        <div class="proc">
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-search"/></svg></div><div><b>Búsqueda manual 1 a 1</b><small>Consultas lentas en sistemas externos</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-layers"/></svg></div><div><b>Actas acumuladas</b><small>Cientos de infracciones varadas por semanas</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-clock"/></svg></div><div><b>Riesgo de prescripción</b><small>Demoras para hallar el domicilio del infractor</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-alert"/></svg></div><div><b>Errores de transcripción</b><small>DNI y direcciones mal copiados invalidaban multas</small></div></div>
+        </div>
+      </div>
+      <div class="vs r zoom" style="--i:5"><div><svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></div></div>
+      <div class="card good r right" style="--i:6">
+        <div class="k">Con Consultas PIDE</div>
+        <div class="proc">
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-link"/></svg></div><div><b>Conexión oficial en línea</b><small>Directo con SUNARP y RENIEC</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-grid"/></svg></div><div><b>Búsqueda masiva por Excel</b><small>Cientos de placas en segundos</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></div><div><b>Datos completos del infractor</b><small>Titular, DNI, domicilio y datos del vehículo</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg></div><div><b>Notificación certera y cobro</b><small>Multas emitidas de inmediato</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PIDE (B) · RECORRIDO ===================== -->
+  <section class="slide content" data-title="Consultas PIDE · Recorrido" data-color="#4f46e5" data-foot="Consultas PIDE · Subgerencia de Transporte">
+    <header class="head">
+      <div>
+        <div class="eyebrow r" style="--i:0">Consultas PIDE · Recorrido</div>
+        <h2 class="r" style="--i:1">Del operativo <span class="hl">a la notificación</span></h2>
+      </div>
+    </header>
+    <div class="pipe six r fade" style="--i:2">
+      <div class="track"><div class="token"><svg class="ico" viewBox="0 0 24 24"><use href="#i-car"/></svg></div></div>
+      <div class="pst" style="--k:#16a34a;--n:0"><i>1</i><b>Operativo en campo</b><small>Actas con las placas de los vehículos</small></div>
+      <div class="pst" style="--k:#2563eb;--n:1.4"><i>2</i><b>Carga masiva</b><small>Placas consolidadas en Excel</small></div>
+      <div class="pst" style="--k:#4f46e5;--n:2.8"><i>3</i><b>Conexión PIDE</b><small>SUNARP y RENIEC en tiempo real</small></div>
+      <div class="pst" style="--k:#ea580c;--n:4.2"><i>4</i><b>Extracción de datos</b><small>Propietario, DNI, domicilio y vehículo</small></div>
+      <div class="pst" style="--k:#db2777;--n:5.6"><i>5</i><b>Emisión de multa</b><small>Expediente y resolución</small></div>
+      <div class="pst" style="--k:#15803d;--n:7"><i>6</i><b>Notificación y pago</b><small>En el domicilio legal, cobro oportuno</small></div>
+    </div>
+    <div class="trans" style="margin-top:56px">
+      <span class="r zoom" style="--i:5;--k:#4f46e5">Titularidad y domicilio oficial</span>
+      <span class="r zoom" style="--i:6;--k:#2563eb">Consulta masiva e individual</span>
+      <span class="r zoom" style="--i:7;--k:#16a34a">Trazabilidad de cada infracción</span>
+    </div>
+    <div class="result r" style="--i:8">
+      <div class="ri"><svg class="ico" viewBox="0 0 24 24"><use href="#i-gauge"/></svg></div>
+      <div><div class="k">Resultado</div><p>Tiempo de trámite: <b>de semanas a segundos</b>, cerca de <b><span data-count="90">90</span>% menos</b>.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== PIDE (C) · LO CONSTRUIDO ===================== -->
+  <section class="slide content" data-title="Consultas PIDE · Lo construido" data-color="#4f46e5" data-foot="Consultas PIDE · Subgerencia de Transporte">
+    <header class="head" style="margin-bottom:30px">
+      <div>
+        <div class="eyebrow r" style="--i:0">Consultas PIDE · Avance</div>
+        <h2 class="r" style="--i:1">Lo que <span class="hl">ya está construido</span></h2>
+      </div>
+      <div class="chip r" style="--i:2"><i></i>En funcionamiento</div>
+    </header>
+    <div class="gallery" style="display:flex;gap:44px;align-items:flex-start">
+      <div class="tabs r left" style="--i:2">
+        <button class="tab on" data-g="0"><span class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-lock"/></svg></span><span><b>Acceso al sistema</b><small>Usuarios de Transporte</small></span><i></i></button>
+        <button class="tab" data-g="1"><span class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-search"/></svg></span><span><b>Consulta individual</b><small>Por número de placa</small></span><i></i></button>
+        <button class="tab" data-g="2"><span class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-grid"/></svg></span><span><b>Consulta masiva</b><small>Cientos de placas con plantilla Excel</small></span><i></i></button>
+        <button class="tab" data-g="3"><span class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></span><span><b>Datos del propietario</b><small>Listos para proceder con la multa</small></span><i></i></button>
+      </div>
+      <div class="browser r right" style="--i:3">
+        <div class="screens" style="aspect-ratio:1178/638;background:#eff3f8">
+          <img class="on" src="assets/pide-login.png" alt="Consultas PIDE: inicio de sesión">
+          <img src="assets/pide-individual.png" alt="Consultas PIDE: consulta individual">
+          <img src="assets/pide-masiva.png" alt="Consultas PIDE: consulta masiva por Excel">
+          <img src="assets/pide-resultado.png" alt="Consultas PIDE: resultado con datos del propietario">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 05 · CECOM PAGOS ===================== -->
+  <section class="slide divider" id="pagos" data-title="05 · CECOM Pagos" data-color="#0891b2">
+    <div class="txt">
+      <div class="num r fade" style="--i:0">05</div>
+      <h2 class="r" style="--i:1">CECOM<br>Pagos</h2>
+      <p class="lead r" style="--i:2">De formatos en blanco a documentos listos para firmar.</p>
+      <div class="bar"></div>
+      <div class="subs r" style="--i:3"><span style="--k:#0891b2">Subgerencia de Seguridad Ciudadana</span><span style="--k:#0e7490">Área de pagos</span></div>
+    </div>
+    <div class="emblem r zoom" style="--i:1"><div class="pulse"></div><div class="pulse"></div><div class="pulse"></div>
+      <div class="disc"><svg class="ico draw" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div></div>
+  </section>
+
+  <!-- ===================== PAGOS (A) · PROBLEMA Y SOLUCIÓN ===================== -->
+  <section class="slide content" data-title="CECOM Pagos · Problema y solución" data-color="#0891b2" data-foot="CECOM Pagos · Subgerencia de Seguridad Ciudadana">
+    <header class="head">
+      <div>
+        <div class="eyebrow r" style="--i:0">CECOM Pagos · Área de pagos</div>
+        <h2 class="r" style="--i:1">El colaborador <span class="hl">solo viene a firmar</span></h2>
+      </div>
+    </header>
+    <p class="lead r" style="--i:2;margin:-14px 0 34px;font-size:27px;max-width:1500px">Cartas de autorización CCI y declaraciones juradas generadas con los datos de cada colaborador.</p>
+    <div style="display:grid;grid-template-columns:1fr 110px 1fr;gap:20px">
+      <div class="card bad r left" style="--i:3">
+        <div class="k">Antes</div>
+        <div class="proc">
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-doc"/></svg></div><div><b>Formatos en blanco</b><small>Cartas y declaraciones impresas sin datos</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-sign"/></svg></div><div><b>Llenado manual cada vez</b><small>DNI, RUC y CCI escritos a mano</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-clock"/></svg></div><div><b>Filas de 20 a 40 minutos</b><small>Aglomeración en ventanilla</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-alert"/></svg></div><div><b>Errores en el CCI</b><small>Letra ilegible en 20 dígitos retrasaba abonos</small></div></div>
+        </div>
+      </div>
+      <div class="vs r zoom" style="--i:5"><div><svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></div></div>
+      <div class="card good r right" style="--i:6">
+        <div class="k">Con CECOM Pagos</div>
+        <div class="proc">
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></div><div><b>Padrón digital centralizado</b><small>Con carga masiva en Excel</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-download"/></svg></div><div><b>Documentos en 1 clic</b><small>Cartas CCI y DJ en PDF, 100% preimpresas</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-sign"/></svg></div><div><b>Solo venir a firmar</b><small>Firma y se retira en segundos</small></div></div>
+          <div class="step"><div class="si"><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg></div><div><b>Abonos exactos, sin colas</b><small>Con trazabilidad total</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PAGOS (B) · RECORRIDO ===================== -->
+  <section class="slide content" data-title="CECOM Pagos · Recorrido" data-color="#0891b2" data-foot="CECOM Pagos · Subgerencia de Seguridad Ciudadana">
+    <header class="head">
+      <div>
+        <div class="eyebrow r" style="--i:0">CECOM Pagos · Recorrido</div>
+        <h2 class="r" style="--i:1">Del padrón <span class="hl">a la firma</span></h2>
+      </div>
+    </header>
+    <div class="pipe six r fade" style="--i:2">
+      <div class="track"><div class="token"><svg class="ico" viewBox="0 0 24 24"><use href="#i-doc"/></svg></div></div>
+      <div class="pst" style="--k:#16a34a;--n:0"><i>1</i><b>Base central</b><small>Importación Excel o registro individual</small></div>
+      <div class="pst" style="--k:#2563eb;--n:1.4"><i>2</i><b>Validación CCI</b><small>Banco y 20 dígitos de la cuenta</small></div>
+      <div class="pst" style="--k:#7c3aed;--n:2.8"><i>3</i><b>Padrón activo</b><small>Habilitados con DNI, RUC y dirección</small></div>
+      <div class="pst" style="--k:#ea580c;--n:4.2"><i>4</i><b>Selección</b><small>Personal, mes y año de pago</small></div>
+      <div class="pst" style="--k:#db2777;--n:5.6"><i>5</i><b>Generación en 1 clic</b><small>PDF oficiales con el CCI impreso</small></div>
+      <div class="pst" style="--k:#15803d;--n:7"><i>6</i><b>Firma y retiro</b><small>En menos de 1 minuto</small></div>
+    </div>
+    <div class="trans" style="margin-top:56px">
+      <span class="r zoom" style="--i:5;--k:#0891b2">CCI preimpreso casilla por casilla</span>
+      <span class="r zoom" style="--i:6;--k:#16a34a">Importación y exportación en Excel</span>
+      <span class="r zoom" style="--i:7;--k:#7c3aed">Control de habilitados por mes, sin pagos duplicados</span>
+    </div>
+    <div class="result r" style="--i:8">
+      <div class="ri"><svg class="ico" viewBox="0 0 24 24"><use href="#i-gauge"/></svg></div>
+      <div><div class="k">Resultado</div><p>Atención presencial: <b>de 20–40 minutos a menos de 1 minuto</b>, cerca de <b><span data-count="95">95</span>% menos</b>.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== PAGOS (C) · PADRÓN Y BANCOS ===================== -->
+  <section class="slide content" data-title="CECOM Pagos · Padrón y bancos" data-color="#0891b2" data-foot="CECOM Pagos · Subgerencia de Seguridad Ciudadana">
+    <header class="head" style="margin-bottom:30px">
+      <div>
+        <div class="eyebrow r" style="--i:0">CECOM Pagos · Avance</div>
+        <h2 class="r" style="--i:1">Padrón, bancos y <span class="hl">gestión de datos</span></h2>
+      </div>
+      <div class="chip r" style="--i:2"><i></i>En funcionamiento</div>
+    </header>
+    <div style="display:flex;gap:44px;align-items:flex-start">
+      <div style="width:500px;flex:none;display:flex;flex-direction:column;gap:18px">
+        <div class="tag r left" style="--i:2"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></div><div><b>Padrón de habilitados</b><small>693 colaboradores registrados</small></div></div>
+        <div class="tag r left" style="--i:3"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-download"/></svg></div><div><b>Carga masiva en Excel</b><small>Plantilla para descargar y cargar la base</small></div></div>
+        <div class="tag r left" style="--i:4"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-bank"/></svg></div><div><b>Bancos y cajas</b><small>Catálogo y validación del CCI</small></div></div>
+        <div class="tag r left" style="--i:5"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-grid"/></svg></div><div><b>Lista general</b><small>Filtro activos / inactivos y exportación</small></div></div>
+        <div class="tag r left" style="--i:6"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-lock"/></svg></div><div><b>Acceso seguro</b><small>Administradores y operadores</small></div></div>
+      </div>
+      <div class="browser r right" style="--i:3">
+        <div class="screens" style="aspect-ratio:1548/745"><img class="on" src="assets/pagos-padron.png" alt="CECOM Pagos: padrón de habilitados"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PAGOS (D) · EMISIÓN ===================== -->
+  <section class="slide content" data-title="CECOM Pagos · Emisión de documentos" data-color="#0891b2" data-foot="CECOM Pagos · Subgerencia de Seguridad Ciudadana">
+    <header class="head" style="margin-bottom:30px">
+      <div>
+        <div class="eyebrow r" style="--i:0">CECOM Pagos · Avance</div>
+        <h2 class="r" style="--i:1">Expedientes <span class="hl">listos para firma</span></h2>
+      </div>
+      <div class="chip r" style="--i:2"><i></i>En funcionamiento</div>
+    </header>
+    <div class="gallery" style="display:flex;gap:44px;align-items:flex-start">
+      <div class="tabs r left" style="--i:2">
+        <button class="tab on" data-g="0"><span class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-download"/></svg></span><span><b>Seleccionar y generar</b><small>Se marca al colaborador, se elige el mes y el PDF se descarga al instante</small></span><i></i></button>
+        <button class="tab" data-g="1"><span class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-sign"/></svg></span><span><b>Documento listo para firmar</b><small>Carta CCI y declaraciones juradas con todos los datos impresos</small></span><i></i></button>
+      </div>
+      <div class="browser r right" style="--i:3">
+        <div class="screens" style="aspect-ratio:1409/700">
+          <img class="on" src="assets/pagos-descarga.png" alt="CECOM Pagos: colaborador seleccionado y declaración jurada descargada">
+          <img src="assets/pagos-documento.png" alt="CECOM Pagos: carta de autorización CCI lista para firma">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 06 · OJO VIGILANTE ===================== -->
+  <section class="slide divider" id="ojo" data-title="06 · El Ojo Vigilante" data-color="#d97706">
+    <div class="txt">
+      <div class="num r fade" style="--i:0">06</div>
+      <h2 class="r" style="--i:1">El Ojo<br>Vigilante</h2>
+      <p class="lead r" style="--i:2">Vecinos, central y serenos conectados en una sola aplicación para atender cada alerta.</p>
+      <div class="bar"></div>
+      <div class="subs r" style="--i:3"><span style="--k:#d97706">Capacitación a vecinos</span><span style="--k:#b45309">Junto con Compromiso 5</span></div>
     </div>
     <div class="emblem r zoom" style="--i:1"><div class="pulse"></div><div class="pulse"></div><div class="pulse"></div>
       <div class="disc"><svg class="ico draw" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
+  </section>
+
+  <!-- ===================== OJO (A) · CAPACITACIONES ===================== -->
+  <section class="slide content" data-title="Ojo Vigilante · Capacitaciones" data-color="#d97706" data-foot="El Ojo Vigilante · Capacitación a vecinos">
+    <header class="head" style="margin-bottom:34px">
+      <div>
+        <div class="eyebrow r" style="--i:0">Ojo Vigilante · Capacitaciones</div>
+        <h2 class="r" style="--i:1">Capacitamos a cada vecino <span class="hl">para que ingrese a la app</span></h2>
+      </div>
+    </header>
+    <div style="display:flex;gap:50px;align-items:flex-start">
+      <div style="width:480px;flex:none;display:flex;flex-direction:column;gap:20px">
+        <div class="tag r left" style="--i:2"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-building"/></svg></div><div><b>Reuniones en el CECOM</b><small>Instalación, cambio de contraseña e ingreso a la app</small></div></div>
+        <div class="tag r left" style="--i:3"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-home"/></svg></div><div><b>En el domicilio del vecino</b><small>Visitas a cada vecino representante</small></div></div>
+        <div class="tag r left" style="--i:4"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-car"/></svg></div><div><b>Serenos y choferes</b><small>También capacitados para atender las alertas</small></div></div>
+        <div class="tag r left" style="--i:5"><div class="ti"><svg class="ico" viewBox="0 0 24 24"><use href="#i-link"/></svg></div><div><b>Junto con Compromiso 5</b><small>El área se sumó a las capacitaciones de vecinos y choferes</small></div></div>
+      </div>
+      <div class="photos">
+        <figure class="r zoom" style="--i:3"><img src="assets/ojo-cecom-1.jpg" alt="Capacitación en el CECOM con la guía de Ojo Vigilante"><figcaption>CECOM</figcaption></figure>
+        <figure class="r zoom" style="--i:4"><img src="assets/ojo-domicilio-1.jpg" alt="Capacitación a vecinos en su domicilio"><figcaption>Domicilio del vecino</figcaption></figure>
+        <figure class="r zoom" style="--i:5"><img src="assets/ojo-serenos-2.jpg" alt="Capacitación a serenos y choferes"><figcaption>Serenos y choferes</figcaption></figure>
+        <figure class="r zoom" style="--i:6"><img src="assets/ojo-cecom-2.jpg" alt="Vecinos en el CECOM frente al mapa de alertas"><figcaption>CECOM</figcaption></figure>
+        <figure class="r zoom" style="--i:7"><img src="assets/ojo-domicilio-2.jpg" alt="Visita a la junta vecinal"><figcaption>Junta vecinal</figcaption></figure>
+        <figure class="r zoom" style="--i:8"><img src="assets/ojo-serenos-1.jpg" alt="Capacitación a serenos en campo"><figcaption>Serenos y choferes</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OJO (B) · AVANCE ===================== -->
+  <section class="slide content" data-title="Ojo Vigilante · Avance" data-color="#d97706" data-foot="El Ojo Vigilante · Capacitación a vecinos">
+    <header class="head">
+      <div>
+        <div class="eyebrow r" style="--i:0">Ojo Vigilante · Avance</div>
+        <h2 class="r" style="--i:1"><span class="hl">5 de 9</span> vecinos ya están listos</h2>
+      </div>
+      <div class="chip r" style="--i:2"><i></i>En curso</div>
+    </header>
+    <p class="lead r" style="--i:2;margin:-14px 0 40px;font-size:27px;max-width:1500px">Vecinos representantes de las 8 jurisdicciones del distrito.</p>
+    <div class="card r" style="--i:3;padding:44px 50px">
+      <div class="people">
+        <i class="on" style="--i:0"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></i><i class="on" style="--i:1"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></i><i class="on" style="--i:2"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></i><i class="on" style="--i:3"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></i><i class="on" style="--i:4"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></i>
+        <i style="--i:5"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></i><i style="--i:6"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></i><i style="--i:7"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></i><i style="--i:8"><svg class="ico" viewBox="0 0 24 24"><use href="#i-user"/></svg></i>
+      </div>
+    </div>
+    <div class="g3" style="margin-top:30px">
+      <div class="card crit r" style="--i:5"><div class="ci" style="background:var(--ok);box-shadow:0 18px 36px -12px var(--ok)"><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg></div><b><span data-count="5">5</span> vecinos listos</b><p>Capacitados y con sesión iniciada en la app.</p></div>
+      <div class="card crit r" style="--i:6"><div class="ci" style="background:var(--warn);box-shadow:0 18px 36px -12px var(--warn)"><svg class="ico" viewBox="0 0 24 24"><use href="#i-clock"/></svg></div><b><span data-count="4">4</span> pendientes</b><p>No pudieron asistir a las capacitaciones por falta de tiempo.</p></div>
+      <div class="card crit r" style="--i:7"><div class="ci"><svg class="ico" viewBox="0 0 24 24"><use href="#i-pin"/></svg></div><b><span data-count="8">8</span> jurisdicciones</b><p>Cubiertas por los 9 vecinos representantes.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== OJO (C) · CÓMO FUNCIONA ===================== -->
+  <section class="slide content" data-title="Ojo Vigilante · Cómo funciona" data-color="#d97706" data-foot="El Ojo Vigilante · Flujo de atención de alertas vecinales">
+    <header class="head">
+      <div>
+        <div class="eyebrow r" style="--i:0">Ojo Vigilante · Cómo funciona</div>
+        <h2 class="r" style="--i:1">Un solo flujo, <span class="hl">tres actores</span></h2>
+      </div>
+    </header>
+    <div class="k r" style="--i:2">El vecino puede reportar</div>
+    <div class="trans">
+      <span class="r zoom" style="--i:2;--k:#7c3aed">Violencia familiar</span>
+      <span class="r zoom" style="--i:3;--k:#dc2626">Robos</span>
+      <span class="r zoom" style="--i:4;--k:#475569">Sospechosos</span>
+      <span class="r zoom" style="--i:5;--k:#2563eb">Accidente de tránsito</span>
+      <span class="r zoom" style="--i:6;--k:#ea580c">Incendios</span>
+      <span class="r zoom" style="--i:7;--k:#16a34a">Ambulancia</span>
+    </div>
+    <div class="flow r fade" style="--i:4;margin-top:60px;padding:0 60px">
+      <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-phone"/></svg></div><span>1. Vecino reporta</span><small>Tipo, ubicación, detalle y foto</small></div>
+      <div class="link" style="--i:0"></div>
+      <div class="node key"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-monitor"/></svg></div><span>2. Central recibe y asigna</span><small>Elige sereno y unidad en SIPCOP-M</small></div>
+      <div class="link" style="--i:1"></div>
+      <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-car"/></svg></div><span>3. Sereno atiende</span><small>Registra lo constatado con foto</small></div>
+      <div class="link" style="--i:2"></div>
+      <div class="node"><div class="nic"><svg class="ico" viewBox="0 0 24 24"><use href="#i-check"/></svg></div><span>4. Vecino confirma</span><small>Conforme o no atendido</small></div>
+    </div>
+    <div class="k r" style="--i:6;margin-top:60px">El vecino sigue su alerta en todo momento</div>
+    <div class="phases r" style="--i:7">
+      <div class="ph"><b>ESTADO 1</b><span>Enviado</span></div>
+      <div class="parrow"><svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></div>
+      <div class="ph"><b>ESTADO 2</b><span>Recibido</span></div>
+      <div class="parrow"><svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></div>
+      <div class="ph"><b>ESTADO 3</b><span>Personal en camino</span></div>
+      <div class="parrow"><svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></div>
+      <div class="ph on"><b>ESTADO 4</b><span>Atendido</span></div>
+    </div>
   </section>
 
   <!-- ===================== CIERRE ===================== -->
@@ -1402,6 +1777,9 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
     <g id="i-bell"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></g>
     <g id="i-wifioff"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/><path d="M3 3l18 18"/></g>
     <g id="i-pin"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></g>
+    <g id="i-search"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></g>
+    <g id="i-bank"><path d="M3 21h18M4 10h16M12 3l9 5H3z"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8"/></g>
+    <g id="i-call"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></g>
     <g id="i-x"><path d="M6 6l12 12M18 6L6 18"/></g>
     <g id="i-route"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"/></g>
   </defs>
@@ -1431,17 +1809,17 @@ html.snap *,html.snap *::before,html.snap *::after{transition:none!important}
     const names = ['Hangar', 'Heroito', 'Elektra', 'Base Sur', 'Santa Rosa', 'Pirámides'];
     let html = '';
     names.forEach((n, i) => {
-      const x = 65 + i * 264, cx = x + 115;
-      html += `<path id="mp${i}" class="ln ded drawln" pathLength="1" style="--i:${i}" d="M843 114 C 843 200, ${cx} 170, ${cx} 290"/>
+      const x = i * 286, cx = x + 125;
+      html += `<path id="mp${i}" class="ln ded drawln" pathLength="1" style="--i:${i}" d="M840 114 C 840 200, ${cx} 170, ${cx} 290"/>
         <circle r="6" fill="#2563eb"><animateMotion dur="2s" begin="${-i * .33}s" repeatCount="indefinite"><mpath href="#mp${i}"/></animateMotion></circle>
         <g class="r zoom" style="--i:${i + 3}">
           <circle cx="${cx}" cy="238" r="24" fill="#fff" stroke="#2563eb" stroke-width="2.5"/>
           <g class="mi" transform="translate(${cx - 12} 226)" style="stroke:#2563eb"><use href="#i-router"/></g>
-          <rect class="cardbox" x="${x}" y="290" width="230" height="140" rx="20"/>
-          <use href="#kiosk" x="${x + 10}" y="312" width="92" height="88"/>
-          <text x="${x + 108}" y="345" class="nm" style="font-size:${n.length > 8 ? 19 : 22}px">${n}</text>
-          <rect x="${x + 108}" y="360" width="112" height="28" rx="14" fill="#dcfce7"/>
-          <text x="${x + 164}" y="379" class="bt" fill="#15803d" style="font-size:13px">✓ Enlace propio</text>
+          <rect class="cardbox" x="${x}" y="290" width="250" height="140" rx="20"/>
+          <use href="#kiosk" x="${x + 14}" y="312" width="92" height="88"/>
+          <text x="${x + 116}" y="345" class="nm" style="font-size:${n.length > 8 ? 19 : 22}px">${n}</text>
+          <rect x="${x + 116}" y="360" width="118" height="28" rx="14" fill="#dcfce7"/>
+          <text x="${x + 175}" y="379" class="bt" fill="#15803d" style="font-size:13px">✓ Enlace propio</text>
         </g>`;
     });
     g.innerHTML = html;
